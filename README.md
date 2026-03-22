@@ -119,4 +119,3 @@ Response body:
 - Make sure port `8000` is free before starting the app.
 
 # Zyntra-Software-Solutions
-# Zyntra-Software-Solutions
