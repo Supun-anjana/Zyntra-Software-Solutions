@@ -1,0 +1,89 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+
+# =========================
+# Environment Variables
+# =========================
+.env
+.env.*
+*.env
+
+# =========================
+# Logs & Runtime
+# =========================
+*.log
+*.out
+*.err
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Build / Distribution
+# =========================
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# =========================
+# Cache / Testing
+# =========================
+.pytest_cache/
+.mypy_cache/
+.cache/
+
+# =========================
+# Node (if frontend assets used)
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# Static / Generated Files
+# =========================
+static/uploads/
+static/tmp/
+
+# =========================
+# Database / Local Files
+# =========================
+*.sqlite3
+*.db
+
+# =========================
+# Secrets / Keys
+# =========================
+*.pem
+*.key
+*.crt
+
+# =========================
+# Deployment
+# =========================
+*.pid
+*.seed
