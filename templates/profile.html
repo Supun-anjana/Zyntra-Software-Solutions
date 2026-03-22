@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Profile — Zyntra Leadership</title>
+  <meta name="description" id="page-description" content="View the profile of a Zyntra leadership member." />
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <link rel="stylesheet" href="/static/css/chatbot.css" />
+  <script>
+    (function () {
+      const theme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+      document.addEventListener('contextmenu', e => e.preventDefault());
+      document.addEventListener('keydown', e => {
+        if (e.keyCode === 123 || (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) || (e.ctrlKey && e.keyCode === 85)) {
+          e.preventDefault(); console.warn('Zyntra Security: Protected.');
+        }
+      });
+    })();
+  </script>
+  <link rel="icon" href="/static/images/logoSVG.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            base: 'var(--bg-base)', card: 'var(--bg-card)', border: 'var(--border)',
+            cyan: 'var(--cyan)', purple: 'var(--purple)', magenta: 'var(--magenta)',
+            blue: 'var(--blue)', green: 'var(--green)', primary: 'var(--text-primary)',
+            secondary: 'var(--text-secondary)', muted: 'var(--muted)', glass: 'var(--bg-glass)',
+          },
+          boxShadow: {
+            'glow-cyan': '0 0 25px rgba(0, 209, 255, 0.5)',
+            'glow-purple': '0 0 25px rgba(165, 124, 255, 0.5)',
+            'glow-cyan-lg': '0 0 40px rgba(0, 209, 255, 0.4), 0 0 80px rgba(0, 209, 255, 0.15)',
+            'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+          },
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="text-primary font-sans leading-relaxed overflow-x-hidden antialiased">
+
+  <div class="scanline"></div>
+
+  <div id="bg-effects" class="fixed inset-0 pointer-events-none overflow-hidden" style="z-index:1;">
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+    <div class="absolute inset-0"
+      style="background:radial-gradient(circle at 50% -10%,rgba(139,92,246,0.1),transparent 50%);"></div>
+  </div>
+
+  <div id="vanta-net" class="fixed inset-0 w-full h-full pointer-events-none" style="z-index:1;"></div>
+
+  <div id="mouse-aura" class="fixed inset-0 pointer-events-none transition-opacity duration-700"
+    style="z-index:3;background:radial-gradient(600px circle at 50% 50%,rgba(165,124,255,0.10),transparent 40%);opacity:1;">
+  </div>
+
+  <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-cyan via-purple to-magenta z-[100]"
+    style="width:0%;transition:width 0.15s;"></div>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav id="navbar"
+    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-base/80 backdrop-blur-xl border-b border-white/5 py-4 px-6 lg:px-12">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group" id="nav-logo-box">
+        <svg class="w-9 h-9 transition-transform duration-500 shadow-glow-cyan rounded-full" viewBox="0 0 40 40"
+          fill="none">
+          <defs>
+            <linearGradient id="nxNH" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#00D1FF" />
+              <stop offset="50%" stop-color="#A57CFF" />
+              <stop offset="100%" stop-color="#FF5A92" />
+            </linearGradient>
+          </defs>
+          <path d="M10 30V10L25 24" stroke="url(#nxNH)" stroke-width="4" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M30 26V10" stroke="url(#nxNH)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="30" cy="30" r="4" fill="url(#nxNH)" />
+        </svg>
+        <div class="flex flex-col ml-1">
+          <span class="text-[24px] font-black tracking-tight leading-none gradient-text-shimmer">Zyntra</span>
+          <span id="nav-sub-text" class="text-[9px] font-bold text-cyan tracking-[0.25em] uppercase mt-0.5">Software
+            Solutions</span>
+        </div>
+      </a>
+
+      <ul class="hidden md:flex items-center gap-10">
+        <li><a href="index.html" class="text-sm font-medium text-white transition-colors">Home</a></li>
+        <li><a href="about.html" id="active-nav-link"
+            class="text-sm font-medium text-secondary hover:text-white transition-colors">About</a></li>
+        <li><a href="services.html"
+            class="text-sm font-medium text-secondary hover:text-white transition-colors">Services</a></li>
+        <li><a href="contact.html"
+            class="text-sm font-medium text-secondary hover:text-white transition-colors">Contact</a></li>
+        <li>
+          <button id="theme-toggle" class="hover:scale-110 active:scale-95 transition-all" aria-label="Toggle Theme">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464l-.707-.707a1 1 0 00-1.414 1.414l.707.707a1 1 0 001.414-1.414zm2.12 10.607a1 1 0 010-1.414l.706-.707a1 1 0 111.414 1.414l-.707.707a1 1 0 01-1.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1z">
+              </path>
+            </svg>
+          </button>
+        </li>
+        <li><a href="contact.html" class="px-6 py-2.5 rounded-full btn-primary text-sm font-bold inline-block">Get
+            Started</a></li>
+      </ul>
+
+      <!-- Hamburger — animates to X, theme-aware color -->
+      <button id="hamburger" class="md:hidden relative flex flex-col gap-[6px] p-2 focus:outline-none z-[60]"
+        aria-label="Toggle Navigation">
+        <span class="hamburger-line w-6 h-[2px] rounded-full block" style="background-color:var(--text-primary)"></span>
+        <span class="hamburger-line w-6 h-[2px] rounded-full block" style="background-color:var(--text-primary)"></span>
+        <span class="hamburger-line w-6 h-[2px] rounded-full block" style="background-color:var(--text-primary)"></span>
+      </button>
+    </div>
+  </nav>
+  <!-- ═══ END NAVBAR ═══ -->
+
+  <!-- ═══ MOBILE MENU — body-level, OUTSIDE <nav> ═══ -->
+  <div id="mobileMenu"
+    class="fixed inset-0 z-[55] flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 isolate"
+    style="background-color:#0b0914;will-change:opacity;">
+
+    <!-- Close Button -->
+    <button id="mobileMenuClose"
+      class="absolute top-6 right-6 w-11 h-11 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center hover:border-cyan hover:shadow-glow-cyan hover:scale-110 active:scale-95 transition-all duration-300"
+      aria-label="Close Menu" style="color:var(--text-primary);">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 6L6 18M6 6l12 12" />
+      </svg>
+    </button>
+
+    <!-- Theme toggle — only addition -->
+    <button id="mobileThemeToggle"
+      class="absolute top-6 left-6 w-11 h-11 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center hover:border-cyan hover:shadow-glow-cyan hover:scale-110 active:scale-95 transition-all duration-300"
+      aria-label="Toggle Theme" style="color:var(--text-primary);">
+      <svg id="mob-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+      </svg>
+      <svg id="mob-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+        <path
+          d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464l-.707-.707a1 1 0 00-1.414 1.414l.707.707a1 1 0 001.414-1.414zm2.12 10.607a1 1 0 010-1.414l.706-.707a1 1 0 111.414 1.414l-.707.707a1 1 0 01-1.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1z" />
+      </svg>
+    </button>
+
+    <ul class="flex flex-col items-center gap-8 translate-y-8 transition-transform duration-500" id="mobileMenuLinks">
+      <li><a href="index.html" class="text-2xl font-bold text-white tracking-wide">Home</a></li>
+      <li><a href="about.html"
+          class="text-2xl font-bold text-secondary hover:text-white tracking-wide transition-colors">About</a></li>
+      <li><a href="services.html"
+          class="text-2xl font-bold text-secondary hover:text-white tracking-wide transition-colors">Services</a></li>
+      <li><a href="contact.html"
+          class="text-2xl font-bold text-secondary hover:text-white tracking-wide transition-colors">Contact</a></li>
+      <li class="mt-4">
+        <a href="contact.html"
+          class="px-8 py-4 rounded-full btn-primary text-lg font-bold hover:-translate-y-1 transition-all duration-300 inline-block shadow-glow-cyan">Start
+          a Project</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Back to Top -->
+  <button id="back-to-top"
+    class="fixed bottom-8 right-8 w-12 h-12 bg-white text-black rounded-2xl shadow-2xl flex items-center justify-center z-50 opacity-0 pointer-events-none translate-y-10 transition-all duration-500 hover:bg-cyan hover:scale-110 active:scale-95 group">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+      class="group-hover:-translate-y-1 transition-transform">
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  </button>
+
+  <!-- ======================== HERO ======================== -->
+  <main class="min-h-screen pt-40 pb-20 px-6 lg:px-12 relative z-10 overflow-hidden flex items-center">
+    <div class="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-16">
+
+      <div class="lg:w-3/5 reveal">
+        <h4 class="text-xl md:text-2xl font-bold text-white mb-4">Hello, It's Me</h4>
+        <h1 class="text-6xl md:text-8xl font-black tracking-tighter text-white mb-2 leading-none">
+          <span id="profile-name" class="glitch-text" data-text="Name">Name</span>
+          <span id="profile-surname" class="gradient-text-shimmer">Surname</span>
+        </h1>
+        <h3 class="text-2xl md:text-3xl font-black mb-8 text-white uppercase tracking-wider">
+          And I'm a <span id="profile-role" class="text-cyan">Role</span>
+        </h3>
+        <p id="profile-description" class="text-secondary text-lg max-w-xl leading-relaxed mb-10">
+          Description goes here...
+        </p>
+        <div id="social-links" class="flex gap-4 mb-12"></div>
+      </div>
+
+      <div class="lg:w-2/5 flex justify-center reveal anim-delay-300">
+        <div class="relative group">
+          <div id="hexagon-glow"
+            class="absolute inset-0 blur-[100px] opacity-25 group-hover:opacity-50 transition-all duration-700 rounded-full">
+          </div>
+          <div class="relative w-64 h-64 md:w-[450px] md:h-[450px]">
+            <div id="hexagon-frame"
+              class="absolute inset-0 bg-gradient-to-br from-cyan to-purple overflow-hidden p-[2px]"
+              style="clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);">
+              <div class="w-full h-full bg-base overflow-hidden relative"
+                style="clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);">
+                <img id="profile-image" src="/static/members/avatar.png" alt="Profile"
+                  class="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-base via-transparent to-transparent opacity-40">
+                </div>
+              </div>
+            </div>
+            <div id="float-decor-1"
+              class="absolute -top-10 -right-10 w-24 h-24 bg-magenta/10 blur-xl rounded-full animate-bounce-slow"></div>
+            <div id="float-decor-2"
+              class="absolute -bottom-10 -left-10 w-32 h-32 bg-cyan/10 blur-xl rounded-full animate-pulse"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-white/10 py-10 px-6 lg:px-12 relative z-30">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <p class="text-secondary text-xs">© 2026 Zyntra Software Solutions. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="#" class="text-secondary hover:text-white text-xs transition-colors">Privacy Policy</a>
+        <a href="#" class="text-secondary hover:text-white text-xs transition-colors">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    section,
+    main,
+    footer {
+      background: transparent !important;
+    }
+
+    .glitch-text {
+      position: relative;
+      display: inline-block;
+    }
+
+    .glitch-text::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      clip: rect(0, 0, 0, 0);
+      text-shadow: -1px 0 var(--cyan), 1px 0 var(--magenta);
+      animation: glitch-anim 4s infinite linear alternate-reverse;
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    @keyframes glitch-anim {
+      0% {
+        clip: rect(10px, 9999px, 20px, 0);
+      }
+
+      5% {
+        clip: rect(40px, 9999px, 50px, 0);
+      }
+
+      10% {
+        clip: rect(80px, 9999px, 90px, 0);
+      }
+
+      15% {
+        clip: rect(10px, 9999px, 30px, 0);
+      }
+
+      20% {
+        clip: rect(0, 0, 0, 0);
+      }
+
+      100% {
+        clip: rect(0, 0, 0, 0);
+      }
+    }
+
+    .animate-bounce-slow {
+      animation: bounce 4s infinite ease-in-out;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    /* Hamburger → X animation */
+    #hamburger .hamburger-line {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    #hamburger .hamburger-line:nth-child(1) {
+      transform: translateY(0) rotate(0deg);
+      transform-origin: center;
+    }
+
+    #hamburger .hamburger-line:nth-child(2) {
+      opacity: 1;
+      transform: scaleX(1);
+      transform-origin: center;
+    }
+
+    #hamburger .hamburger-line:nth-child(3) {
+      transform: translateY(0) rotate(0deg);
+      transform-origin: center;
+    }
+
+    #hamburger.open .hamburger-line:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    #hamburger.open .hamburger-line:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    #hamburger.open .hamburger-line:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // ── Theme ──
+      const themeToggleBtn = document.getElementById('theme-toggle');
+      const darkIcon = document.getElementById('theme-toggle-dark-icon');
+      const lightIcon = document.getElementById('theme-toggle-light-icon');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileMenuLinks = document.getElementById('mobileMenuLinks');
+      const hamburger = document.getElementById('hamburger');
+      const closeBtn = document.getElementById('mobileMenuClose');
+      const mobToggle = document.getElementById("mobileThemeToggle");
+      const mobDark = document.getElementById("mob-dark-icon");
+      const mobLight = document.getElementById("mob-light-icon");
+
+      function applyTheme(theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+        const isDark = theme === "dark";
+        darkIcon.classList.toggle("hidden", isDark);
+        lightIcon.classList.toggle("hidden", !isDark);
+        mobDark.classList.toggle("hidden", isDark);
+        mobLight.classList.toggle("hidden", !isDark);
+        mobileMenu.style.backgroundColor = isDark ? "#0b0914" : "#f8fafc";
+        if (window.vantaInstance) {
+          window.vantaInstance.setOptions({
+            backgroundColor: isDark ? 0x0b0914 : 0xf8fafc,
+            color1: isDark ? 0x8b5cf6 : 0x6b46c1,
+            color2: isDark ? 0x00d1ff : 0x0077b6,
+          });
+        }
+      }
+
+      applyTheme(document.documentElement.getAttribute("data-theme") || "dark");
+      themeToggleBtn.addEventListener("click", () => applyTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark"));
+      mobToggle.addEventListener("click", () => applyTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark"));
+
+      // ── Mobile Menu ──
+      function openMenu() {
+        hamburger.classList.add('open');
+        mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+        mobileMenuLinks.classList.remove('translate-y-8');
+        mobileMenuLinks.classList.add('translate-y-0');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMenu() {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+        mobileMenuLinks.classList.remove('translate-y-0');
+        mobileMenuLinks.classList.add('translate-y-8');
+        document.body.style.overflow = '';
+      }
+      hamburger.addEventListener('click', () => hamburger.classList.contains('open') ? closeMenu() : openMenu());
+      closeBtn.addEventListener('click', closeMenu);
+      mobileMenuLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+      // ── Scroll Reveal ──
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+      // ── Navbar + Scroll Progress ──
+      const nav = document.getElementById('navbar');
+      const progressBar = document.getElementById('scroll-progress');
+      const btt = document.getElementById('back-to-top');
+
+      window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (progressBar) progressBar.style.width = (winScroll / height * 100) + '%';
+        if (winScroll > 50) { nav.classList.add('bg-base/95', 'py-3', 'shadow-glass'); nav.classList.remove('bg-base/80', 'py-4'); }
+        else { nav.classList.remove('bg-base/95', 'py-3', 'shadow-glass'); nav.classList.add('bg-base/80', 'py-4'); }
+        if (winScroll > 500) { btt.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-10'); btt.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0'); }
+        else { btt.classList.add('opacity-0', 'pointer-events-none', 'translate-y-10'); btt.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0'); }
+      });
+      btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      // ── Mouse Aura ──
+      document.addEventListener('mousemove', (e) => {
+        const aura = document.getElementById('mouse-aura');
+        if (aura) {
+          const t = document.documentElement.getAttribute('data-theme');
+          aura.style.background = `radial-gradient(800px circle at ${e.clientX}px ${e.clientY}px,${t === 'dark' ? 'rgba(165,124,255,0.08)' : 'rgba(59,130,246,0.08)'},transparent 40%)`;
+        }
+      });
+
+      // ── Profile Load ──
+      loadProfile();
+    });
+
+    async function loadProfile() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const userId = urlParams.get('user') || 'damsith';
+
+      try {
+        const response = await fetch('/static/data/profiles.json');
+        const profiles = await response.json();
+        const profile = profiles[userId];
+        if (!profile) { console.error('Profile not found'); return; }
+
+        document.getElementById('page-title').textContent = `${profile.name} ${profile.surname} — Zyntra Leadership`;
+        document.getElementById('page-description').content = `View the profile of ${profile.name} ${profile.surname}, ${profile.role} at Zyntra.`;
+        document.getElementById('profile-name').textContent = profile.name;
+        document.getElementById('profile-name').setAttribute('data-text', profile.name);
+        document.getElementById('profile-surname').textContent = profile.surname;
+        document.getElementById('profile-role').textContent = profile.role;
+        document.getElementById('profile-description').textContent = profile.description;
+        document.getElementById('profile-image').src = profile.image;
+        document.getElementById('profile-image').alt = `${profile.name} ${profile.surname}`;
+
+        const color = profile.themeColor || 'cyan';
+        const colorClasses = {
+          cyan: { text: 'text-cyan', bg: 'bg-cyan', border: 'hover:border-cyan', shadow: 'hover:shadow-glow-cyan', glow: 'bg-cyan', btnGlow: 'shadow-glow-cyan' },
+          purple: { text: 'text-purple', bg: 'bg-purple', border: 'hover:border-purple', shadow: 'hover:shadow-glow-purple', glow: 'bg-purple', btnGlow: 'shadow-glow-purple' },
+          magenta: { text: 'text-magenta', bg: 'bg-magenta', border: 'hover:border-magenta', shadow: 'hover:shadow-glow-magenta', glow: 'bg-magenta', btnGlow: 'shadow-glow-magenta' },
+          'orange-500': { text: 'text-orange-500', bg: 'bg-orange-500', border: 'hover:border-orange-500', shadow: 'hover:shadow-[0_0_20px_rgba(249,115,22,0.4)]', glow: 'bg-orange-500', btnGlow: 'shadow-[0_0_25px_rgba(249,115,22,0.5)]' },
+          green: { text: 'text-green', bg: 'bg-green', border: 'hover:border-green', shadow: 'hover:shadow-[0_0_20px_rgba(34,197,94,0.4)]', glow: 'bg-green', btnGlow: 'shadow-[0_0_25px_rgba(34,197,94,0.5)]' },
+          blue: { text: 'text-blue', bg: 'bg-blue', border: 'hover:border-blue', shadow: 'hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]', glow: 'bg-blue', btnGlow: 'shadow-[0_0_25px_rgba(59,130,246,0.5)]' },
+          'red-500': { text: 'text-red-500', bg: 'bg-red-500', border: 'hover:border-red-500', shadow: 'hover:shadow-[0_0_20px_rgba(239,68,68,0.4)]', glow: 'bg-red-500', btnGlow: 'shadow-[0_0_25px_rgba(239,68,68,0.5)]' },
+        };
+        const theme = colorClasses[color] || colorClasses.cyan;
+
+        document.getElementById('profile-role').innerHTML = `And I'm a <span class="${theme.text}">${profile.role}</span>`;
+        const navLogo = document.getElementById('nav-logo-box').querySelector('svg');
+        if (navLogo) navLogo.className = `w-9 h-9 transition-transform duration-500 rounded-full ${theme.btnGlow}`;
+        document.getElementById('nav-sub-text').className = `text-[9px] font-bold ${theme.text} tracking-[0.25em] uppercase mt-0.5`;
+        document.getElementById('active-nav-link').className = `text-sm font-medium ${theme.text} transition-colors`;
+        document.getElementById('hexagon-glow').className = `absolute inset-0 ${theme.glow} blur-[80px] opacity-20 group-hover:opacity-40 transition-opacity duration-700 rounded-full`;
+
+        let fromColor = color, toColor = 'purple';
+        if (color === 'purple') toColor = 'magenta';
+        else if (color === 'magenta') toColor = 'cyan';
+        else if (color === 'orange-500') toColor = 'red-500';
+        else if (color === 'green') toColor = 'cyan';
+        else if (color === 'blue') toColor = 'purple';
+        else if (color === 'red-500') toColor = 'magenta';
+
+        document.getElementById('hexagon-frame').className = `absolute inset-0 bg-gradient-to-br from-${fromColor} to-${toColor} overflow-hidden p-[2px]`;
+        document.getElementById('float-decor-1').className = `absolute -top-10 -right-10 w-24 h-24 bg-${toColor}/10 blur-xl rounded-full animate-bounce-slow`;
+        document.getElementById('float-decor-2').className = `absolute -bottom-10 -left-10 w-32 h-32 bg-${fromColor}/10 blur-xl rounded-full animate-pulse`;
+
+        const socialContainer = document.getElementById('social-links');
+        socialContainer.innerHTML = '';
+        const socialIcons = {
+          linkedin: `<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>`,
+          twitter: `<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>`,
+          instagram: `<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.266.069 1.645.069 4.849s-.011 3.584-.069 4.849c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.849-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.848s.012-3.584.07-4.849c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.337 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.337-.2 6.78-2.618 6.98-6.98.058-1.281.072-1.689.072-4.948s-.014-3.667-.072-4.947c-.2-4.338-2.617-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>`,
+          github: `<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.011-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>`
+        };
+
+        Object.keys(profile.social).forEach(key => {
+          const link = profile.social[key];
+          if (link) {
+            const a = document.createElement('a');
+            a.href = link;
+            a.className = `w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-secondary hover:text-white ${theme.bg}/20 ${theme.border} ${theme.shadow} transition-all duration-300 transform hover:-translate-y-1`;
+            a.innerHTML = socialIcons[key] || '';
+            socialContainer.appendChild(a);
+          }
+        });
+
+        // Vanta init
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        const isMobile = window.innerWidth < 768;
+        window.vantaInstance = VANTA.NET({
+          el: '#vanta-net',
+          mouseControls: true, touchControls: true, minHeight: 200.0, minWidth: 200.0,
+          scale: 1.0, scaleMobile: 1.0,
+          color: currentTheme === 'dark' ? (color === 'purple' ? 0x8b5cf6 : 0x0891B2) : 0x0891B2,
+          backgroundColor: currentTheme === 'dark' ? 0x0B0914 : 0xF8FAFC,
+          points: isMobile ? 6.0 : 8.0, maxDistance: 20.0, spacing: 20.0
+        });
+
+      } catch (error) {
+        console.error('Error loading profile:', error);
+      }
+    }
+  </script>
+  <script src="/static/js/chatbot.js"></script>
+</body>
+
+</html>

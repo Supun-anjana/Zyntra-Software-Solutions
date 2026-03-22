@@ -1,0 +1,114 @@
+{
+  "damsith": {
+    "name": "Damsith",
+    "surname": "Willarachchi",
+    "role": "CEO & Systems Architect",
+    "description": "I specialize in building fault-tolerant distributed systems and scaling enterprise-grade SaaS products. With over a decade of experience, I lead Zyntra's engineering teams to push the boundaries of what's possible in cloud computing and AI.",
+    "image": "/static/members/avatar.png",
+    "themeColor": "cyan",
+    "social": {
+      "linkedin": "#",
+      "twitter": "#",
+      "instagram": "#",
+      "github": "#"
+    }
+  },
+  "supun": {
+    "name": "Supun",
+    "surname": "Anjana",
+    "role": "CTO & Distributed Architect",
+    "description": "Distributed systems expert and AI researcher. Drives Zyntra's technical strategy and R&D divisions. I focus on high-performance backend architectures and deep learning integrations.",
+    "image": "/static/members/avatar.png",
+    "themeColor": "purple",
+    "social": {
+      "linkedin": "#",
+      "twitter": "#",
+      "instagram": "#",
+      "github": "#"
+    }
+  },
+  "thineth": {
+    "name": "Thineth",
+    "surname": "Thisuna",
+    "role": "Lead Designer",
+    "description": "Creates breathtaking, human-centered interfaces that convert. Previously senior UI/UX lead at global startups.",
+    "image": "/static/members/thineth.jpeg",
+    "themeColor": "magenta",
+    "social": {
+      "linkedin": "#",
+      "twitter": "#",
+      "instagram": "#",
+      "github": "#"
+    }
+  },
+  "janith": {
+    "name": "Janith",
+    "surname": "Geeshan",
+    "role": "Co-Designer",
+    "description": "Visual artist and interaction designer. Specializes in building dynamic, highly-animated frontend experiences.",
+    "image": "/static/members/janith.jpg",
+    "themeColor": "orange-500",
+    "social": {
+      "linkedin": "#",
+      "twitter": "#",
+      "instagram": "#",
+      "github": "#"
+    }
+  },
+  "chesura": {
+    "name": "Chesura",
+    "surname": "Pamod",
+    "role": "Cloud Engineer",
+    "description": "AWS Certified Solutions Architect. Orchestrates robust, autoscaling Kubernetes clusters for zero downtime.",
+    "image": "/static/members/chesura.jpeg",
+    "themeColor": "green",
+    "social": {
+      "linkedin": "#",
+      "twitter": "#",
+      "instagram": "#",
+      "github": "#"
+    }
+  },
+  "himasha": {
+    "name": "Himasha",
+    "surname": "Shehan",
+    "role": "Backend System Eng.",
+    "description": "Go and Rust specialist crafting blazingly fast APIs and managing intricate database architectures.",
+    "image": "/static/members/himasha.jpeg",
+    "themeColor": "blue",
+    "social": {
+      "linkedin": "#",
+      "twitter": "#",
+      "instagram": "#",
+      "github": "#"
+    }
+  },
+  "madusha": {
+    "name": "Madhusha",
+    "surname": "Gihan",
+    "role": "Security Specialist",
+    "description": "CISSP-certified ethical hacker. Conducts relentless penetration tests to keep client data fortress-secure.",
+    "image": "/static/members/madusha.jpeg",
+    "themeColor": "red-500",
+    "social": {
+      "linkedin": "#",
+      "twitter": "#",
+      "instagram": "#",
+      "github": "#"
+    }
+  },
+  "sasanka": {
+    "name": "Sasanka",
+    "surname": "Akash",
+    "role": "AI Specialist",
+    "description": "Passionate AI researcher and machine learning engineer. Developing next-gen neural architectures and autonomous systems to solve complex real-world problems.",
+    "image": "/static/members/avatar.png",
+    "themeColor": "cyan",
+    "social": {
+      "linkedin": "#",
+      "twitter": "#",
+      "instagram": "#",
+      "github": "#"
+    }
+  }
+}
