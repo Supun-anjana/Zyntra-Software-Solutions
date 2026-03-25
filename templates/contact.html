@@ -465,7 +465,7 @@
               </div> -->
 
               <input type="hidden" name="time" value="Mar 10 2025 08:46">
-              
+
               <div class="flex flex-col gap-2">
                 <label for="message" class="text-xs font-bold text-secondary tracking-wider uppercase">Project
                   Brief</label>
@@ -573,7 +573,8 @@
                 <path
                   d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg><a href="mailto:zyntrasoftwaresolutions@gmail.com"
-                class="text-secondary hover:text-white text-sm transition-colors">zyntrasoftwaresolutions@gmail.com</a></li>
+                class="text-secondary hover:text-white text-sm transition-colors">zyntrasoftwaresolutions@gmail.com</a>
+            </li>
             <li class="flex items-start gap-4"><svg class="w-5 h-5 text-cyan shrink-0" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor" stroke-width="2">
                 <path
@@ -740,30 +741,39 @@
   <script src="/static/js/chatbot.js"></script>
 
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            // https://dashboard.emailjs.com/admin/account
-            emailjs.init({
-              publicKey: "p0KFDOqrXA1hT2jHf",
-            });
-        })();
-    </script>
-    <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('contactForm').addEventListener('submit', function(event) {
-                event.preventDefault();
+  <script type="text/javascript">
+    (function () {
+      // https://dashboard.emailjs.com/admin/account
+      emailjs.init({
+        publicKey: "p0KFDOqrXA1hT2jHf",
+      });
+    })();
+  </script>
+  <script type="text/javascript">
+    window.onload = function () {
+      document.getElementById('contactForm').addEventListener('submit', function (event) {
+        event.preventDefault();
 
-                // these IDs from the previous steps
-                emailjs.sendForm('service_i07cdkn', 'template_mn6kwkf', this)
-                    .then(() => {
-                        alert('SUCCESS! Your message has been sent.');
-                    }, (error) => {
-                        alert('FAILED...', error);
-                    });
+        // these IDs from the previous steps
+        emailjs.sendForm('service_i07cdkn', 'template_mn6kwkf', this)
+          .then(() => {
+            // alert('SUCCESS! Your message has been sent.');
+            Swal.fire({
+              title: "Done",
+              text: "Email sent successfully. We'll be in touch.",
+              icon: "success",
+              theme: 'dark'
+            }).then(() => {
+              document.getElementById('contactForm').reset();
             });
-        }
-    </script>
+          }, (error) => {
+            alert('FAILED...', error);
+          });
+      });
+    }
+  </script>
 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
