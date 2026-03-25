@@ -46,13 +46,13 @@ SYSTEM_MESSAGE = (
     "Provide clear and accurate information to help customers understand the company's offerings, "
     "processes, and policies. "
     "When discussing pricing or quotes, always direct customers to contact our sales team at "
-    "zyntrasoftwaresolution@gmail.com for a personalized estimate. "
+    "zyntrasoftwaresolutions@gmail.com for a personalized estimate. "
     "If a customer's question cannot be answered based on available information, "
-    "courteously direct them to contact us at zyntrasoftwaresolution@gmail.com for further assistance."
+    "courteously direct them to contact us at zyntrasoftwaresolutions@gmail.com for further assistance."
 )
 
 llm = ChatOpenAI(
-    model=OPENROUTER_MODEL,          # picks up "stepfun/step-3.5-flash:free" from .env
+    model=OPENROUTER_MODEL,        
     temperature=0,
     openai_api_key=OPENROUTER_API_KEY,
     openai_api_base="https://openrouter.ai/api/v1",
