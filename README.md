@@ -117,6 +117,3 @@ Response body:
 
 - If `.env` values are missing, AI responses may fail.
 - Make sure port `8000` is free before starting the app.
-
-# Zyntra-Software-Solutions
-# Zyntra-Software-Solutions
