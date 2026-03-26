@@ -1,58 +1,55 @@
 {
   "damsith": {
     "name": "Damsith",
-    "surname": "Willarachchi",
+    "surname": "Thevindu",
     "role": "CEO & Systems Architect",
-    "description": "I specialize in building fault-tolerant distributed systems and scaling enterprise-grade SaaS products. With over a decade of experience, I lead Zyntra's engineering teams to push the boundaries of what's possible in cloud computing and AI.",
-    "image": "/static/members/avatar.png",
+    "about": "I am a passionate Software Engineer and AI Engineer currently pursuing a BSc (Hons) in Software Engineering. I specialize in building modern, scalable, and user-centric applications while continuously expanding my expertise in cutting-edge technologies.",
+    "description": "With a strong foundation in Full Stack Development, I design and develop end-to-end web applications, create responsive user interfaces, and build robust backend systems using RESTful APIs and microservices architecture. I also have hands-on experience deploying and maintaining cloud-based applications with a focus on performance and scalability.\n\nIn Artificial Intelligence, I focus on Machine Learning, Deep Learning, Computer Vision, and Natural Language Processing (NLP). I enjoy building intelligent, data-driven systems and deploying AI models into real-world applications.\n\nAdditionally, I explore Cloud and DevOps technologies such as AWS, Azure, Docker, and Kubernetes to build scalable, production-ready systems.\n\nI am also pursuing a BSc (Hons) in Cyber Security & Digital Forensics at ESOFT Metro Campus (awarded by Kingston University), where I study ethical hacking, digital investigations, and secure application development.\n\nI am driven by curiosity, innovation, and continuous learning, with a strong focus on building impactful and reliable software solutions.",
+    "image": "members/Damsith.jpeg",
     "themeColor": "cyan",
     "social": {
-      "linkedin": "#",
-      "twitter": "#",
-      "instagram": "#",
-      "github": "#"
+      "linkedin": "https://www.linkedin.com/in/damsith-willarachchi-b0a93a380?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      "email": "https://mail.google.com/mail/?view=cm&fs=1&to=damsith.willarachchi@gmail.com",
+      "github": "https://github.com/damsiththevindu"
     }
   },
   "supun": {
     "name": "Supun",
     "surname": "Anjana",
     "role": "CTO & Distributed Architect",
-    "description": "Distributed systems expert and AI researcher. Drives Zyntra's technical strategy and R&D divisions. I focus on high-performance backend architectures and deep learning integrations.",
-    "image": "/static/members/avatar.png",
+    "description": "I am a results-driven Software Engineering Undergraduate (BSc Hons) at the Java Institute for Advanced Technology, currently serving as a Team Lead at Zyntra Software Solutions. With over 2 to 3 years of hands-on industry experience, I have successfully spearheaded numerous end-to-end software projects, managing the entire development lifecycle—from initial architecture to final deployment. I am dedicated to leading innovation and maintaining architectural integrity across all projects at Zyntra. My technical expertise spans a robust full-stack environment, leveraging Java and PHP for high-performance backend systems, while crafting dynamic, responsive user interfaces using React, JavaScript, HTML, and CSS. I combine deep technical proficiency with strategic team leadership, ensuring that each project adheres to rigorous engineering standards and best practices. I am passionate about delivering scalable, innovation-led digital solutions that solve complex real-world problems. By emphasizing clean, maintainable code, disciplined project management, and architectural excellence, I strive to create software that is both robust and transformative, bridging the gap between technical execution and strategic vision. Driven by curiosity, innovation, and continuous learning, I thrive in environments where I can lead teams, drive technical decisions, and deliver high-quality software solutions that make a tangible impact.",
+    "image": "member",
     "themeColor": "purple",
     "social": {
-      "linkedin": "#",
-      "twitter": "#",
-      "instagram": "#",
-      "github": "#"
+      "linkedin": "https://www.linkedin.com/in/supun-anjana-2a9b12293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      "email": "https://mail.google.com/mail/?view=cm&fs=1&to=supun.zyntra@gmail.com",
+      "github": "https://github.com/Supun-anjana"
     }
   },
   "thineth": {
     "name": "Thineth",
     "surname": "Thisuna",
-    "role": "Lead Designer",
-    "description": "Creates breathtaking, human-centered interfaces that convert. Previously senior UI/UX lead at global startups.",
-    "image": "/static/members/thineth.jpeg",
+    "role": "Database Administrator ",
+    "description": "BSc (Hons) in Software Engineering (Undergraduate)\n\nI am a dedicated Software Engineering undergraduate and backend developer with a strong foundation in database operations and system management. I specialize in designing and developing efficient, scalable web and software applications with a focus on performance, reliability, and clean, maintainable code.\n\nWith hands-on experience in backend development, I am skilled in managing data structures, optimizing database queries, and ensuring data integrity. I enjoy solving complex problems and building robust systems that deliver seamless user experiences.\n\nI am continuously learning and adapting to modern technologies, striving to enhance my technical expertise and deliver high-quality, impactful software solutions.",
+    "image": "members/thineth.jpeg",
     "themeColor": "magenta",
     "social": {
-      "linkedin": "#",
-      "twitter": "#",
-      "instagram": "#",
-      "github": "#"
+      "linkedin": "https://www.linkedin.com/in/thineth-thisuna-344461296?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      "email": "https://mail.google.com/mail/?view=cm&fs=1&to=tthisuna@gmail.com",
+      "github": "https://github.com/ThinethThisuna"
     }
   },
   "janith": {
     "name": "Janith",
     "surname": "Geeshan",
-    "role": "Co-Designer",
-    "description": "Visual artist and interaction designer. Specializes in building dynamic, highly-animated frontend experiences.",
-    "image": "/static/members/janith.jpg",
+    "role": "Lead Quality Assurance",
+    "description": "I am a BSc (Hons) in Software Engineering (Undergraduate) student based in Sri Lanka, with a strong foundation in software development and design. I specialize in full-stack development and graphic design, combining technical expertise with a creative mindset to build complete digital solutions—from intuitive user interfaces to efficient, scalable back-end systems.\n\nAs a full-stack developer with a designer’s perspective, I am passionate about transforming ideas into fully functional digital products. I enjoy coding responsive front-end interfaces, designing clean and user-friendly visuals, and developing robust back-end architectures that ensure reliability and performance. My approach integrates logic, creativity, and best practices in software engineering to deliver solutions that are both visually appealing and technically sound.\n\nDriven by curiosity and continuous learning, I aim to contribute to projects that solve real-world problems while providing meaningful user experiences. I thrive in environments where I can bridge the gap between design and development, bringing complete, polished digital experiences to life.",
+    "image": "members/janith.jpg",
     "themeColor": "orange-500",
     "social": {
-      "linkedin": "#",
-      "twitter": "#",
-      "instagram": "#",
-      "github": "#"
+      "linkedin": "https://www.linkedin.com/in/janith-geeshan/",
+      "email": "https://mail.google.com/mail/?view=cm&fs=1&to=janithgeeshan.zyntra@gmail.com",
+      "github": "https://github.com/janith-geeshan"
     }
   },
   "chesura": {
@@ -60,7 +57,7 @@
     "surname": "Pamod",
     "role": "Cloud Engineer",
     "description": "AWS Certified Solutions Architect. Orchestrates robust, autoscaling Kubernetes clusters for zero downtime.",
-    "image": "/static/members/chesura.jpeg",
+    "image": "members/chesura.jpeg",
     "themeColor": "green",
     "social": {
       "linkedin": "#",
@@ -72,15 +69,14 @@
   "himasha": {
     "name": "Himasha",
     "surname": "Shehan",
-    "role": "Backend System Eng.",
-    "description": "Go and Rust specialist crafting blazingly fast APIs and managing intricate database architectures.",
-    "image": "/static/members/himasha.jpeg",
+    "role": "Senior UI/UX Engineer",
+    "description": "I am a Director and Lead Full-Stack Developer at Zyntra Software Solutions, where I bridge the gap between strategic leadership and hands-on technical excellence. In my role, I architect scalable, high-performance digital ecosystems and drive Zyntra’s technical vision, ensuring our solutions are not only robust and efficient but also transformative for our clients. Alongside my professional responsibilities, I am enhancing my expertise in software architecture as a candidate at the Java Institute, focusing on advanced software engineering principles and modern system design. My work emphasizes the integration of full-stack development, cloud technologies, and best practices in software architecture, delivering solutions that balance innovation with maintainability and performance.Driven by a passion for creating software that is not just functional but truly transformative, I thrive in environments where I can combine leadership, technical strategy, and hands-on development to produce high-quality, impactful digital products.",
+    "image": "members/himasha.jpeg",
     "themeColor": "blue",
     "social": {
-      "linkedin": "#",
-      "twitter": "#",
-      "instagram": "#",
-      "github": "#"
+      "linkedin": "https://www.linkedin.com/in/himasha-shehan-03452639a?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+      "email": "https://mail.google.com/mail/?view=cm&fs=1&to=himashashehan.zyntra@gmail.com",
+      "github": "https://github.com/HimashaExe"
     }
   },
   "madusha": {
@@ -88,27 +84,25 @@
     "surname": "Gihan",
     "role": "Security Specialist",
     "description": "CISSP-certified ethical hacker. Conducts relentless penetration tests to keep client data fortress-secure.",
-    "image": "/static/members/madusha.jpeg",
+    "image": "members/madusha.jpeg",
     "themeColor": "red-500",
     "social": {
       "linkedin": "#",
       "twitter": "#",
-      "instagram": "#",
       "github": "#"
     }
   },
   "sasanka": {
     "name": "Sasanka",
     "surname": "Akash",
-    "role": "AI Specialist",
-    "description": "Passionate AI researcher and machine learning engineer. Developing next-gen neural architectures and autonomous systems to solve complex real-world problems.",
-    "image": "/static/members/avatar.png",
+    "role": "Artificial Intelligence Specialist",
+    "description": "I am a passionate Software Engineer and AI Engineer currently pursuing a BSc (Hons) in Software Engineering in Sri Lanka. I specialize in building modern, scalable, and user-centric applications while continuously expanding my expertise in cutting-edge technologies. With a strong foundation in Full Stack Development, I design and develop end-to-end web applications, create responsive and intuitive user interfaces, and implement robust backend systems using RESTful APIs and microservices architecture. I have hands-on experience in deploying and maintaining cloud-based applications, with a focus on performance optimization, scalability, and reliability. In the field of Artificial Intelligence, I am a self-driven learner who has gained knowledge through independent study and deep research. My areas of interest include Machine Learning, Deep Learning, Computer Vision, and Natural Language Processing (NLP). I enjoy developing intelligent, data-driven systems and deploying AI models into real-world applications that deliver tangible value. Additionally, I actively explore Cloud and DevOps technologies, including AWS, Azure, Docker, and Kubernetes, to build efficient, scalable, and production-ready systems. Driven by curiosity, innovation, and a commitment to continuous learning, I aim to create impactful software and AI solutions that solve real-world problems while pushing the boundaries of technology. I thrive in environments where I can integrate software engineering, AI, and cloud technologies to deliver complete, polished digital solutions.",
+    "image": "members/Sasanka.jpg",
     "themeColor": "cyan",
     "social": {
-      "linkedin": "#",
-      "twitter": "#",
-      "instagram": "#",
-      "github": "#"
+      "linkedin": "https://www.linkedin.com/in/sasanka-akash/",
+      "email": "https://mail.google.com/mail/?view=cm&fs=1&to=sasanka.zyntra@gmail.com",
+      "github": "https://github.com/SESasanka"
     }
   }
 }
